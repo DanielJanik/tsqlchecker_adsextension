@@ -1,0 +1,56 @@
+{
+    "name": "tsqlchecker",
+    "displayName": "tsqlchecker",
+    "description": "Checks TSQL for issues. (beta version)",
+    "version": "0.0.1",
+    "publisher": "DanielJanik",
+    "engines": {
+        "vscode": "^1.41.0",
+        "azdata": "*"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+	"contributes": {
+		"colors": [
+			{
+				"id": "myextension.yellowBackground",
+				"description": "Background decoration color for medium warning",
+				"defaults": {
+					"dark": "#ffff00",
+					"light": "#ffff00",
+					"highContrast": "#ffff00"
+				}
+            },
+            {
+				"id": "myextension.redBackground",
+				"description": "Background decoration color for high warning",
+				"defaults": {
+					"dark": "#FF000055",
+					"light": "#FF000055",
+					"highContrast": "#FF000055"
+				}
+			}
+		]
+	},
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "proposedapi": "node installTypings.js"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "azdata": "1.0.0",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
