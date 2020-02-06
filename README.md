@@ -27,3 +27,4 @@ Added TSQL checks for hints, select *, and options.
 
 **Enjoy!**
 "# azuredatastudiotsqlextension" 
+"# azuredatastudiotsqlextension" 
